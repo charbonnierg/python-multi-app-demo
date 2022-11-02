@@ -22,6 +22,7 @@ dependencies = ["gunicorn", "supervisor", "app1", "app2"]
 [project.optional-dependencies]
 tests = ["pytest", "pytest-cov"]
 dev = ["black", "isort", "flake8", "mypy"]
+build = ["setuptools-scm", "build"]
 
 [project.urls]
 Repository = "https://github.com/charbonnierg/python-multi-app"
