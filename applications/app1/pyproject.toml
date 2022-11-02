@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "app1"
+authors = [
+    { author = "Guillaume Charbonnier", email = "guillaume.charbonnier@araymond.com" },
+]
+description = "First application"
+readme = "README.md"
+requires-python = ">=3.7"
+keywords = ["fastapi", "uvicorn"]
+license = { text = "Apache-2.0" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+]
+dynamic = ["version"]
+dependencies = ["fastapi", "uvicorn"]
+
+[project.optional-dependencies]
+tests = ["pytest", "pytest-cov"]
+dev = ["black", "isort", "flake8", "mypy"]
+
+[project.urls]
+Repository = "https://github.com/charbonnierg/python-multi-app"
+Issues = "https://github.com/charbonnierg/python-multi-app/issues"
+
+[tool.setuptools.dynamic]
+version = { attr = "app1.__version__" }

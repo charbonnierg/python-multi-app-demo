@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "all-in-one"
+authors = [
+    { author = "Guillaume Charbonnier", email = "guillaume.charbonnier@araymond.com" },
+]
+description = "Python multi-app example"
+readme = "README.md"
+requires-python = ">=3.7"
+keywords = ["fastapi", "uvicorn", "supervisord"]
+license = { text = "Apache-2.0" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+]
+dynamic = ["version"]
+dependencies = ["gunicorn", "supervisor", "app1", "app2"]
+
+[project.optional-dependencies]
+tests = ["pytest", "pytest-cov"]
+dev = ["black", "isort", "flake8", "mypy"]
+
+[project.urls]
+Repository = "https://github.com/charbonnierg/python-multi-app"
+Issues = "https://github.com/charbonnierg/python-multi-app/issues"
+
+[tool.setuptools.dynamic]
+version = { attr = "all_in_one.__version__" }
